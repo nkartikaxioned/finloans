@@ -105,6 +105,12 @@ li {
   margin: 0 auto;
 }
 
+:root {
+  --white: #fff;
+  --green: #3ED4D6;
+  --grey: #959090;
+}
+
 .width-height {
   width: 100%;
   height: 100%;
@@ -112,45 +118,100 @@ li {
 
 .caps-first { text-transform: capitalize; }
 
+.grey-color { color: #6f6a6a; }
 /*=================================
   Header styling starts here
 =================================*/
 
 .hamburger, .dropdown { display: none; }
-header .wrapper, .navList { display: flex; }
+
+header .wrapper, .navList { 
+  display: flex; 
+  justify-content: space-between;
+}
+
+.navList { justify-content: end; }
+.navList li:not(:first-child) { margin-left: 23px; }
 
 header .wrapper { 
-  width: 95%; 
+  width: 94%; 
   align-items: center;
 }
 
 header { 
   width: 100%;
-  margin: 15px 0;
+  margin: 20px 0;
   position: fixed; 
   z-index: 1;
 }
+
+header nav { width: 45%; }
 
 header h1 { 
   font-size: 23px; 
   text-transform: capitalize;
 }
 
+h1 a { color: var(--white); }
+
+header h1::before, 
+.arrow::after, 
+.phone-no a::before { font-family: "fontAwesome"; }
+
 header h1::before {
   content: '\e00d';
-  font-family: "fontAwesome";
+  margin-right: 10px;
   font-size: 28px;
 }
 
 .arrow { font-size: 0; }
 
+.arrow::after {
+  content: '\f078';
+  margin-left: 5px;
+  color: var(--white);
+  font-size: 12px;
+  cursor: pointer;
+}
+
 .navList li a { 
+  color: var(--white);
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
  }
 
-.phone-no a { font-size: 14px; }
+.phone-no a { 
+  color: var(--white);
+  font-size: 14px; 
+}
+
+.phone-no a::before {
+  content: '\f095';
+  margin-right: 8px;
+  color: var(--white);
+  font-size: 11px;
+}
+
+.contact-apply { 
+  display: flex; 
+  align-items: center;
+}
+
+.loan-btn {
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  margin-left: 10px;
+ }
+
+.loan-btn a { 
+  padding: 12px 8px;
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize; 
+  transition: .3s;
+}
 
 /*=================================
   Header styling ends here
@@ -162,8 +223,9 @@ header h1::before {
 
 .banner {
   width: 100%;
-  height: 100vh; 
+  height: 145vh; 
   position: relative; 
+  background: #8690b08c;
 }
 
 .banner figure, .banner figure img {
@@ -175,15 +237,86 @@ header h1::before {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
 }
 
 .banner figure img { object-fit: cover; }
 
+.contentt { 
+  width: 85%;
+  height: 54%;
+  display: flex; 
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    justify-content: space-between;
+    transform: translate(-50%, -50%);
+}
 
+.get-loan, .loan-form { 
+  width: 50%; 
+  padding: 80px 20px;
+}
 
+h2 {
+  font-size: 55px;
+    color: var(--white);
+}
 
+h2::first-letter { text-transform: capitalize; }
 
+.works-btn { margin-top: 35px; }
 
+.loan-form {
+  width: 30%;
+  padding: 50px;
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.loan-form p:first-child {
+  font-size: 30px;
+  text-align: center;
+}
+
+.loan-form p:first-letter { text-transform: capitalize; }
+.loan-form p:nth-child(2) { margin: 30px 0 40px; }
+
+.amount, .month { 
+  width: 100%;
+    padding: 12px;
+    border: 1px solid #d3cdcd;
+    border-radius: 5px;
+    background: var(--white);
+    text-transform: capitalize;
+    font-size: 16px;
+ }
+
+ .loan-form .form-field { margin-bottom: 15px; }
+ .loan-form .form-fieldd { margin-bottom: 40px; }
+ .continue-btn { margin-top: 40px; }
+
+ .works-btn a, .continue-btn a {
+  border-radius: 5px;
+  background: var(--green);
+  color: var(--white);
+  text-transform: capitalize;
+ }
+
+ .works-btn a {
+  padding: 14px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+ .continue-btn a {
+  width: 100%;
+    padding: 12px 0;
+    border: 1px solid var(--green);
+    text-align: center;
+    font-size: 18px;
+}
+ 
 /*=================================
   main styling ends here
 =================================*/
@@ -203,6 +336,18 @@ header h1::before {
 =================================*/ 
 
 /*media query starts*/
+
+@media only screen and (min-width: 995px) {
+
+/* header */
+.loan-btn a:hover { 
+  background: var(--green);
+  color: var(--white);
+ }
+
+} 
+
+
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
 
