@@ -126,7 +126,7 @@ header {
 header h1::before {
   content: '\e00d';
   font-family: "fontAwesome";
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .arrow { font-size: 0; }
