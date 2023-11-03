@@ -113,6 +113,7 @@ li {
   --lightBlue: #F5FBFF;
   --lightblue: #DDF0FF;
   --blue: #4293FF;
+  --lightGrey: #c3bcbc;
 }
 
 .width-height {
@@ -419,6 +420,7 @@ h2::first-letter { text-transform: capitalize; }
     color: var(--white);
     text-transform: capitalize;
     font-weight: 600;
+    transition: .3s;
 }
 
 .car-loan span, 
@@ -562,9 +564,10 @@ h4 {
 
 /* section slider-list style start */
 
+.silder-list { margin: 11% 0; }
+
 .slider li img {
   max-width: 210px;
-  /* width: 19%; */
   min-height: 210px;
   border-radius: 190px;
   object-fit: cover;
@@ -582,16 +585,90 @@ h4 {
   flex-shrink: 0;
   }
 
-  .previous-btn, .next-btn { 
+  .previous-btn a, .next-btn a { 
+    margin-bottom: 45px;
     font-size: 0;
     transition: .3s; 
   }
 
-  .previous-btn::before, .next-btn::before {
-    
+  .previous-btn a::before, .next-btn a::before {
+    width: 20px;
+    height: 20px;
+    padding: 18px;
+    border-radius: 30px;
+    background: var(--lightblue);
+    color: var(--blue);
+    font-family: "fontAwesome";
+    font-size: 16px;
   }
 
+  .previous-btn a::before { content: "\f053"; }
+   .next-btn a::before { content: "\f054"; }
+.company-logo { margin-top: 13%; }
+.text-content { padding: 50px; }
+
+.text-content p { 
+  line-height: 1.5;
+    font-size: 18px;
+ }
+
+ .text-content span {
+  margin-top: 10px;
+    display: block;
+ }
+
+ .company-logo li { margin-left: 72px; }
+
+ .company-logo li span { 
+  display: flex;
+  color: var(--lightGrey);
+  font-size: 28px;
+    text-transform: capitalize;
+  }
+
+  .company-logo li span::before {
+    padding-right: 15px;
+    color: var(--lightGrey);
+    font-size: 40px;
+    font-family: "fontAwesome";
+  }
+
+  .dopkin::before { content: "\f1aa"; }
+  .verticle::before { content: "\f1a9"; }
+  .shallow::before { content: "\f1a4"; }
+  .diggo::before { content: "\f781"; }
+  .next::before { content: "\e01a"; }
+
 /* section slider-list style end */
+
+/* contact section start */
+
+.contact {
+  background-image: url("/assets/images/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg");
+  min-height: 400px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact .wrapper {
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact h5 {
+  width: 70%;
+    color: var(--white);
+    font-size: 45px;
+}
+
+.contact h5::first-letter { text-transform: capitalize; }
+.contact .apply-btn a { padding: 15px; }
+
+/* contact section end */
 
 /*=================================
   main styling ends here
@@ -601,11 +678,122 @@ h4 {
   footer styling starts here
 =================================*/ 
 
+/* top footer style start */
 
+.top-footer { 
+  margin: 11% 0; 
+  display: flex;
+  justify-content: space-between;
+}
 
+.services, .useful-links { 
+  display: flex;
+  flex-direction: column;
+ }
 
+.top-footer h6 {
+  margin-bottom: 40px;
+  font-size: 25px;
+  text-transform: capitalize;
+}
 
+.top-footer h6::before {
+  content: '\e00d';
+  padding: 15px;
+  border-radius: 30px;
+  margin-right: 10px;
+  background: linear-gradient(#3ECED9, #3F92FA);
+  color: var(--white);
+  font-size: 20px;
+  font-family: "fontAwesome";
+}
 
+.finloans-list {
+   display: flex;
+   flex-direction: column;
+  }
+
+  .finloans-list li { padding: 5px 0; }
+.services li, .useful-links li { padding: 13px 0; }
+
+.email-input input { border: 0; }
+
+.email-input { 
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  display: flex;
+    justify-content: space-between;
+ }
+
+.services p, 
+.useful-links p, 
+.subscribe-container p { 
+  margin-bottom: 37px;
+  text-transform: capitalize;
+  font-weight: 600;
+  line-height: 1.5;
+
+}
+
+.subscribe-container { width: 32%; }
+.finloans { width: 30%; }
+.email-input { margin-bottom: 25px; }
+
+.email-input a {
+  padding: 9px 20px;
+  border-radius: 5px;
+  margin: 2px 0;
+  margin-right: 2px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.social-media { margin-top: 52px; } 
+
+.social-media li a {
+  width: 10px;
+  height: 10px; 
+  font-size: 0; 
+  transition: .3s;
+}
+
+.social-media li { margin-right: 35px; }
+.social-media li a::before { 
+  padding: 12px;
+  border: 1px solid var(--lightGrey);
+  border-radius: 20px;
+  font-family: "fontAwesome";
+  font-size: 12px;
+ }
+
+ .facebook::before { content: '\f09a'; }
+ .twitter::before { content: '\f099'; }
+ .google::before { content: '\f1a0'; }
+ .instagram::before { content: '\f16d'; }
+
+/* top footer style end */
+
+/* bottom footer */
+
+.bottom-footer {
+  margin: 40px 0;
+  display: flex;
+    justify-content: center;
+}
+.bottom-footer p { 
+  font-size: 15px;
+  font-weight: 600; 
+}
+
+.bottom-footer a { 
+  color: var(--blue); 
+  text-transform: capitalize;
+}
+
+.bottom-footer span::after {
+  content: "\f004";
+  font-family: "fontAwesome";
+} 
 
  /*=================================
   footer styling ends here
@@ -632,6 +820,16 @@ h4 {
   border: 1px solid var(--green);
   color: var(--green);
 }
+
+.apply-btn a:hover {
+  border: 1px solid var(--darkGreen);
+  background: transparent;
+  color: var(--darkGreen);
+}
+
+.previous-btn a:hover, .next-btn a:hover { color: var(--darkGreen); } 
+
+
 
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
