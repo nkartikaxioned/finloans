@@ -101,7 +101,7 @@ li {
 
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 82%; 
   margin: 0 auto;
 }
 
@@ -109,6 +109,10 @@ li {
   --white: #fff;
   --green: #3ED4D6;
   --grey: #959090;
+  --darkGreen: #3ED4D6;
+  --lightBlue: #F5FBFF;
+  --lightblue: #DDF0FF;
+  --blue: #4293FF;
 }
 
 .width-height {
@@ -117,13 +121,38 @@ li {
 }
 
 .caps-first { text-transform: capitalize; }
-
 .grey-color { color: #6f6a6a; }
+
+.green-color { 
+  margin: 18px 0 25px;
+    color: #3ED4D6;
+    font-size: 30px;
+} 
+
+h3 { 
+  margin-bottom: 20px;
+  font-size: 46px;
+ }
+
+h3::first-letter { text-transform: capitalize; }
+.caps { text-transform: capitalize; }
+
 /*=================================
   Header styling starts here
 =================================*/
 
 .hamburger, .dropdown { display: none; }
+
+.dropdown-active { 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+ }
+
+.dropdown span a{ 
+  padding: 5px;
+  transition: .3s;
+ }
 
 header .wrapper, .navList { 
   display: flex; 
@@ -221,6 +250,8 @@ header h1::before {
   main styling starts here
 =================================*/
 
+.loan .wrapper { position: relative; }
+
 .banner {
   width: 100%;
   height: 145vh; 
@@ -264,7 +295,6 @@ h2 {
 }
 
 h2::first-letter { text-transform: capitalize; }
-
 .works-btn { margin-top: 35px; }
 
 .loan-form {
@@ -288,6 +318,7 @@ h2::first-letter { text-transform: capitalize; }
     border: 1px solid #d3cdcd;
     border-radius: 5px;
     background: var(--white);
+    color: var(--grey);
     text-transform: capitalize;
     font-size: 16px;
  }
@@ -297,26 +328,244 @@ h2::first-letter { text-transform: capitalize; }
  .continue-btn { margin-top: 40px; }
 
  .works-btn a, .continue-btn a {
-  border-radius: 5px;
+   border: 1px solid var(--green);
+   border-radius: 5px;
   background: var(--green);
   color: var(--white);
   text-transform: capitalize;
+  transition: .3s;
  }
 
  .works-btn a {
   padding: 14px 30px;
-    border-radius: 5px;
     font-weight: 600;
 }
 
  .continue-btn a {
   width: 100%;
     padding: 12px 0;
-    border: 1px solid var(--green);
     text-align: center;
     font-size: 18px;
 }
  
+/* loan section start */
+
+.loan { margin: 13% 0; }
+.loan h3, .loan p { text-align: center; }
+.loan h3 { padding: 10px 0 0; }
+
+.loan-list { 
+  margin-top: 8%; 
+  display: flex;
+}
+
+.loan-list li {
+  width: 23%;
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+    flex-direction: column;
+    background: linear-gradient(#3B83EE, #1C4884);
+}
+
+.loan-list li:not(:first-child) { margin-left: 26px; }
+
+.loan-interest { 
+  border-top: 1px solid var(--grey);
+  padding: 25px 0 50px; 
+}
+
+.loan-interest li { 
+  width: 100%; 
+  padding: 0;
+  border: 0;
+  display: inline-block;
+  background: transparent; 
+  color: var(--white);
+}
+
+.loan-interest li:not(:first-child) { 
+  padding-top: 12px;
+  margin-left: 0;
+ }
+
+.car-loan span:nth-child(2), 
+.home-loan span:nth-child(2) , 
+.education-loan span:nth-child(2) { 
+  margin-top: 40px;
+  color: var(--white); 
+}
+
+.home-symbol, .car-symbol, .educ-symbol{ font-size: 0; }
+
+.home-symbol::before, 
+.car-symbol::before, .educ-symbol::before {
+  color: var(--white);
+  font-size: 75px;
+  font-family: "fontAwesome";
+}
+
+.home-symbol::before { content: '\f752'; }
+.car-symbol::before { content: '\f1b9'; }
+.educ-symbol::before { content: '\f549'; }
+
+.apply-btn a {
+  width: 100%;
+    padding: 11px 0;
+    border: 1px solid var(--darkGreen);
+    border-radius: 5px;
+    text-align: center;
+    background: var(--darkGreen);
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.car-loan span, 
+.home-loan span, 
+.education-loan span { text-align: center; }
+
+
+.loan-interest li::before {
+  content: '\f111';
+  padding-right: 5px;
+  color: var(--darkGreen);
+  font-family: "fontAwesome";
+  font-size: 8px;
+}
+
+.underline {
+  width: 50px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    left: 48%;
+    top: 0;
+    background: var(--green);
+    font-size: 0;
+}
+
+/* loan section end */
+
+/* how it works section */
+
+.how-it-works { 
+  padding: 10% 0 5%;
+  position: relative; 
+  background: var(--lightBlue);
+}
+
+.how-it-works .underline { top: 17%; }
+.how-it-works h3, .how-it-works p { text-align: center; }
+
+.info-list { 
+  margin: 8% 0;
+  display: flex;
+    flex-wrap: wrap;
+ }
+
+ .info-list li p { 
+  text-align: justify; 
+  line-height: 1.5;
+}
+
+ .info-list li { width: 29%; }
+ .info-list li:not(:first-child) { margin-left: 5%; }
+
+ .number {
+   width: 20px;
+   padding: 26px;
+   border-radius: 45px;
+  display: block;
+    background: var(--lightblue);
+    color: var(--blue);
+}
+ 
+h4::first-letter { text-transform: capitalize; }
+
+h4 {
+  margin: 18px 0;
+  font-size: 25px;
+}
+
+/* how it works section ends */
+
+/* frequently-asked section starts */
+
+.frequently-asked .wrapper {
+   width: 100%;
+   display: flex;
+   }
+
+   .frequently-asked figure {  width: 50%;  }
+   .frequently-asked-accordion {  width: 32%;  }
+
+  .frequently-asked figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .frequently-asked-accordion {
+    padding: 10% 8%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.frequently-asked-accordion h3 { 
+  margin-bottom: 62px;
+    font-size: 45px;
+ }
+
+.accordion-list li {
+  min-width: 432px;
+  border-bottom: 1px solid var(--grey);
+}
+
+.cross { 
+  font-size: 0;
+  transition: .3s;
+ }
+
+ .cross::before {
+  content: '\f078';
+  color: var(--grey);
+  font-family: "fontAwesome";
+  font-size: 12px;
+  cursor: pointer;
+ }
+
+.contain { 
+  padding: 20px 0 15px;
+  display: flex; 
+}
+
+.contain p { 
+  font-size: 18px; 
+  padding-left: 20px;
+}
+
+.panel {
+  padding: 4px 20px 27px 20px;
+  display: none;
+  font-size: 14px;
+  line-height: 1.8;
+  transition: .4s;
+}
+
+.active-panel { display: block; }
+.active-cross { transform: rotateZ(180deg); }
+
+/* frequently-asked section ends */
+
+/* section slider-list style start */
+
+
+
+/* section slider-list style end */
+
 /*=================================
   main styling ends here
 =================================*/
@@ -340,6 +589,10 @@ h2::first-letter { text-transform: capitalize; }
 @media only screen and (min-width: 995px) {
 
 /* header */
+.dropdown span a:hover {
+  color: var(--green);
+}
+
 .loan-btn a:hover { 
   background: var(--green);
   color: var(--white);
@@ -347,6 +600,11 @@ h2::first-letter { text-transform: capitalize; }
 
 } 
 
+.works-btn a:hover, .continue-btn a:hover {
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+}
 
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
