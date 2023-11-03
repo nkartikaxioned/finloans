@@ -97,6 +97,14 @@ li {
   list-style-type: none;
 }
 
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 /*for wrapper*/
 
 .wrapper {
@@ -143,6 +151,7 @@ h3::first-letter { text-transform: capitalize; }
 =================================*/
 
 .hamburger, .dropdown { display: none; }
+.navList li a { transition: all .1s linear; }
 
 .dropdown-active { 
   display: flex;
@@ -160,6 +169,16 @@ header .wrapper, .navList {
   justify-content: space-between;
 }
 
+.hamburger .bar {
+  content: '';
+  min-width: 25px;
+  height: 1px;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #fff;
+  display: block;
+  font-size: 0;
+}
+
 .navList { justify-content: end; }
 .navList li:not(:first-child) { margin-left: 23px; }
 
@@ -175,7 +194,10 @@ header {
   z-index: 1;
 }
 
-header nav { width: 45%; }
+header nav { 
+  width: 45%; 
+  position: fixed;
+}
 
 header h1 { 
   font-size: 23px; 
@@ -275,7 +297,7 @@ header h1::before {
 .banner figure img { object-fit: cover; }
 
 .contentt { 
-  width: 85%;
+  width: 82%;
   height: 54%;
   display: flex; 
   position: absolute;
@@ -299,7 +321,7 @@ h2::first-letter { text-transform: capitalize; }
 .works-btn { margin-top: 35px; }
 
 .loan-form {
-  width: 30%;
+  width: 40%;
   padding: 50px;
   border-radius: 8px;
   background: var(--white);
@@ -361,7 +383,7 @@ h2::first-letter { text-transform: capitalize; }
 }
 
 .loan-list li {
-  width: 23%;
+  width: 32%;
   padding: 50px;
   border-radius: 10px;
   display: flex;
@@ -475,7 +497,7 @@ h2::first-letter { text-transform: capitalize; }
  .info-list li:not(:first-child) { margin-left: 5%; }
 
  .number {
-   width: 20px;
+   width: 70px;
    padding: 26px;
    border-radius: 45px;
   display: block;
@@ -499,8 +521,8 @@ h4 {
    display: flex;
    }
 
-   .frequently-asked figure {  width: 50%;  }
-   .frequently-asked-accordion {  width: 32%;  }
+   .frequently-asked figure, 
+   .frequently-asked-accordion {  width: 50%;  }
 
   .frequently-asked figure img {
     width: 100%;
@@ -666,7 +688,7 @@ h4 {
 }
 
 .contact h5::first-letter { text-transform: capitalize; }
-.contact .apply-btn a { padding: 15px; }
+.contact .apply-btn a { padding: 12px 25px; }
 
 /* contact section end */
 
@@ -716,13 +738,16 @@ h4 {
   .finloans-list li { padding: 5px 0; }
 .services li, .useful-links li { padding: 13px 0; }
 
-.email-input input { border: 0; }
+.email-input input { 
+  border: 0;
+  width: 100%;
+  outline: 0;
+ }
 
 .email-input { 
   border: 1px solid var(--grey);
   border-radius: 5px;
   display: flex;
-    justify-content: space-between;
  }
 
 .services p, 
@@ -735,7 +760,7 @@ h4 {
 
 }
 
-.subscribe-container { width: 32%; }
+.subscribe-container { width: 29%; }
 .finloans { width: 30%; }
 .email-input { margin-bottom: 25px; }
 
@@ -746,6 +771,7 @@ h4 {
   margin-right: 2px;
   background: var(--blue);
   color: var(--white);
+  transition: all .3s linear;
 }
 
 .social-media { margin-top: 52px; } 
@@ -795,6 +821,14 @@ h4 {
   font-family: "fontAwesome";
 } 
 
+.finloans-list li a , 
+.social-media li a, 
+.services li, 
+.useful-links li a { 
+  transition: .3s; 
+  cursor: pointer;
+}
+
  /*=================================
   footer styling ends here
 =================================*/ 
@@ -804,6 +838,9 @@ h4 {
 @media only screen and (min-width: 995px) {
 
 /* header */
+
+.navList li a:hover { border-bottom: 1px solid var(--white); } 
+
 .dropdown span a:hover {
   color: var(--green);
 }
@@ -813,9 +850,8 @@ h4 {
   color: var(--white);
  }
 
-} 
 
-.works-btn a:hover, .continue-btn a:hover {
+ .works-btn a:hover, .continue-btn a:hover {
   background: transparent;
   border: 1px solid var(--green);
   color: var(--green);
@@ -827,13 +863,144 @@ h4 {
   color: var(--darkGreen);
 }
 
-.previous-btn a:hover, .next-btn a:hover { color: var(--darkGreen); } 
+.previous-btn a:hover, .next-btn a:hover { color: red; } 
 
+.finloans-list li a:hover , 
+.social-media li a:hover, 
+.services li:hover, 
+.useful-links li a:hover  { color: var(--darkGreen); }
 
+.email-input a:hover { background: var(--green); }
+
+} 
+
+@media only screen and (max-width: 1024px) {
+  .top-footer { flex-wrap: wrap; }
+  .services { width: 16%; }
+  .useful-links { width: 13%; }
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .contentt {
+    top: 16%;
+    transform: translate(-50% ,-16%);
+    align-items: center;
+    flex-direction: column; 
+  }
+  
+
+  .get-loan, .loan-form { width: 75%; }
+  .loan-list { flex-wrap: wrap; }
+  .loan-list li { width: 48%; }
+
+  .loan-interest { 
+    width: 100%; 
+    text-align: center;
+  }
+
+  .loan-list li:last-child{ 
+    margin-left: 0; 
+    margin-top: 30px;
+  }
+
+  .info-list { flex-wrap: wrap; }
+  .info-list li { width: 47%; }
+  .info-list li:last-child {
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+.how-it-works .underline { top: 10%; }
+
+.frequently-asked .wrapper { flex-direction: column; }
+.frequently-asked figure, .frequently-asked-accordion {
+  width: 100%;
+}
+
+.company-logo { flex-wrap: wrap; }
+}
 
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
 
+  /* header start */
 
+  .header-content { 
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hamburger { display: block; }
 
-}  
+header nav { 
+  width: 100%;
+  transform: translate(100%, 0); 
+}
+
+.contact-apply { display: none; }
+
+ h2 { font-size: 45px; }
+
+  /* header end */
+
+/* banner section */
+
+.loan-form p:first-child { font-size: 24px; }
+.loan-list li { width: 100%; }
+
+.loan-list li {
+  margin-left: 0;
+  margin-top: 30px;
+}
+
+.loan-list li:not(:first-child) { margin-left: 0; }
+.info-list li { width: 55%; }
+.info-list { justify-content: center; }
+
+.info-list li:not(:first-child) {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.info-list li:not(:first-child) { margin-left: 0; }
+
+.text-content p {
+  line-height: 1;
+  font-size: 16px;
+}
+
+.contact h5 { font-size: 36px; }
+.loan { margin: 7% 0; }
+.how-it-works { padding: 1% 0 5%; }  
+.how-it-works .underline { top: 0%; }
+
+.how-it-works h3, 
+.loan h3, 
+.frequently-asked-accordion h3 { font-size: 40px; }
+
+h4 { font-size: 22px; }
+}
+
+@media only screen and (max-width: 640px) {
+  .contentt { width: 100%; }
+
+  .contentt {
+    top: 8%;
+    transform: translate(-50% ,-8%);
+  }
+
+  h2 { font-size: 40px; }
+
+  .how-it-works h3,
+   .loan h3,
+    .frequently-asked-accordion h3 {
+    font-size: 28px;
+}
+
+.info-list li { width: 75%; }
+.text-content p { font-size: 13px; }
+.contact h5 { font-size: 30px; }
+
+}
