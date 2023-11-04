@@ -197,6 +197,7 @@ header {
 header nav { 
   width: 45%; 
   position: fixed;
+  margin-left: 14%;
 }
 
 header h1 { 
@@ -981,9 +982,29 @@ header nav {
 .frequently-asked-accordion h3 { font-size: 40px; }
 
 h4 { font-size: 22px; }
+
+/* footer section */
+
+.finloans{ flex-basis: 35%; }
+.social-media,
+.services,
+.useful-links { flex-basis: 30%; }
+.subscribe-container { flex-basis: 35%; }
+
+
+.finloans,
+.social-media,
+.services,
+.useful-links,
+.subscribe-container { margin-top: 20px; }
+
+.social-media li { margin-top: 30px; }
 }
 
 @media only screen and (max-width: 640px) {
+
+  .wrapper { width: 95%; }
+
   .contentt { width: 100%; }
 
   .contentt {
@@ -999,8 +1020,34 @@ h4 { font-size: 22px; }
     font-size: 28px;
 }
 
+.slider li img {
+  max-width: 110px;
+  min-height: 110px;
+}
+
+.previous-btn a, .next-btn a { margin-bottom: 18px; }
+.previous-btn a::before, .next-btn a::before { padding: 7px; }
+.text-content { padding: 20px; }
+.text-content p { font-size: 12px; }
 .info-list li { width: 75%; }
 .text-content p { font-size: 13px; }
 .contact h5 { font-size: 30px; }
 
+.services p, 
+.useful-links p, 
+.subscribe-container p { margin-bottom: 15px; }
+.finloans{ flex-basis: 85%; }
+.social-media,
+.services,
+.useful-links { flex-basis: 85%; }
+.subscribe-container { flex-basis: 85%; }
+
+.services,
+.useful-links,
+.subscribe-container { margin-top: 45px; }
+
+.services li,
+ .useful-links li { padding: 5px 0; }
+
+ .bottom-footer p { font-size: 12px; } 
 }
